@@ -1,0 +1,33 @@
+tb_animes
+- id
+- name
+- realease_date
+- description
+- popular_review
+- id_typeAnimes
+
+tb_typeAnimes
+- id 
+- type
+
+tb_user
+- id
+- name
+- email
+- password
+
+tb_coment 
+- id_user
+- id_anime
+- comment
+
+tb_favoriteAnime
+- id_user
+- id_anime
+- id 
+
+tb_avaliation
+- id_user 
+- id_anime
+- nota 
+
