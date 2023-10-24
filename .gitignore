@@ -1,0 +1,56 @@
+/animescut-layout/
+
+# Arquivos específicos do ambiente de desenvolvimento
+.vscode/
+.idea/
+*.iml
+
+# Dependências de construção
+/target/
+/dist/
+/node_modules/
+/package-lock.json
+/npm-debug.log
+yarn-error.log
+
+# Arquivos de configuração
+application.properties
+application.yml
+*.log
+.env
+.env.*
+
+# Arquivos temporários
+*.tmp
+*.bak
+
+# Arquivos de log e relatórios
+log/
+logs/
+log.txt
+access.log
+*.log
+*.log.*
+
+# Arquivos de compilação do Maven
+/.mvn/
+/out/
+
+# Outros arquivos e diretórios
+*.class
+*.jar
+*.war
+*.ear
+*.swp
+.DS_Store
+
+# Arquivos específicos do H2 Database
+.h2.server.properties
+data.mv.db
+data.trace.db
+
+# Arquivos de configuração do H2
+.h2.server.properties
+
+# Diretórios específicos do H2
+h2db/
