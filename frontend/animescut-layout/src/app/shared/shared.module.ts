@@ -20,7 +20,13 @@ import {FormsModule} from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    MatToolbarModule, MatButtonModule, MatIconModule, FormsModule, MatFormFieldModule, MatSelectModule, NgFor
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    NgFor
   ],
   exports: [NavbarComponent, FooterComponent]
 })

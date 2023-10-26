@@ -1,0 +1,18 @@
+/* Estilo para o componente de vídeo */
+.video-card {
+  max-width: 400px; /* Define a largura máxima do cartão de vídeo */
+  margin: 10px; /* Define margem para espaçamento entre os cartões */
+  color: white;
+  background-color: #00008B;
+  border-radius: 15px;
+}
+.video-car-title{
+  text-align: center;
+}
+
+.datails-button{
+  background-color: #FFD700; /* Define a cor de fundo como amarelo */
+  border-radius: 15px; /* Define o raio das bordas para torná-las mais arredondadas */
+  margin: auto;/* Centraliza o texto no botão */
+  width: 50%;
+}

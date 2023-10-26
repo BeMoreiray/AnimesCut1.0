@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AnimesRoutingModule } from './animes-routing.module';
 import { LinkListComponent } from './link-list/link-list.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { LinkListComponent } from './link-list/link-list.component';
   ],
   imports: [
     CommonModule,
-    AnimesRoutingModule
+    AnimesRoutingModule,
+    MatCardModule
   ]
 })
 export class AnimesModule { }
