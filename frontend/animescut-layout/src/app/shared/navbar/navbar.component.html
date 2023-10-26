@@ -1,7 +1,8 @@
-<p>
+
   <mat-toolbar>
     <mat-toolbar-row>
-      <span class="blue-text">Animes</span><span class="yellow-text">Cut</span>
+      <span class="title-part1">Animes</span>
+      <span class="title-part2">Cut</span>
       <span class="example-spacer"></span>
       <button mat-button>Login</button>
       <button mat-raised-button color="primary">Cadastre-se</button>
@@ -11,18 +12,23 @@
       <mat-form-field>
         <mat-label>Escolha um genero</mat-label>
         <mat-select >
-          <mat-option value="option1">Shounen</mat-option>
-          <mat-option value="option2">Option 2</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
+          <mat-option value="">Shounen</mat-option>
+          <mat-option value="">Shoujo</mat-option>
+          <mat-option value="">Seinen</mat-option>
+          <mat-option value="">Josei</mat-option>
+          <mat-option value="">Isekai</mat-option>
+          <mat-option value="">Gore</mat-option>
+          <mat-option value="">Slice of Life</mat-option>
         </mat-select>
       </mat-form-field>
       <span class="example-spacer"></span>
+      <input type="text" class="search-input" placeholder="Pesquisar" >
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with search icon">
         <mat-icon>search</mat-icon>
       </button>
-      <input type="text" class="search-input" placeholder="Pesquisar" style="display: none;">
+
     </mat-toolbar-row>
   </mat-toolbar>
-</p>
+
 
 <script src="/navbar/navbar.js"></script>

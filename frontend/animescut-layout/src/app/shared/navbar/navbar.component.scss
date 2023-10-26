@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Bebas+Neue&display=swap');
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -10,13 +12,21 @@ mat-toolbar-row {
   color: white;/* Cor do texto no topo */
 }
 
-.blue-text {
-  color: blue;
+
+/* Estilo para a parte "Animes" */
+.title-part1 {
+
+  font-family: 'Bebas Neue', sans-serif; /* Substitua 'NovaFonte' pela fonte desejada. */
+  font-size: 45px; /* Ajuste o tamanho da fonte conforme necessário. */
+  color: blue; /* Define a cor azul para a parte "Animes". */
 }
 
-.yellow-text {
-  color: yellow;
-  font-weight: bold;
+/* Estilo para a parte "Cut" */
+.title-part2 {
+  font-family: 'NovaFonte', sans-serif; /* Mesma fonte para a parte "Cut". */
+  font-size: 40px; /* Mesmo tamanho de fonte. */
+  color: yellow; /* Define a cor amarela para a parte "Cut". */
 }
+
 
 
