@@ -1,3 +1,4 @@
+import { AnimesService } from './../service/animes.service';
 import { Component, OnInit } from '@angular/core';
 import { Anime } from '../model/anime';
 
@@ -9,10 +10,10 @@ import { Anime } from '../model/anime';
 export class LinkListComponent implements OnInit{
   links: Anime[] = [];
 
-  constructor(){
-    this.links = [
-      {_id: '1', title: 'Shingueki', link: 'https://www.youtube.com/watch?v=ZLAVlaQPHgY'}
-    ];
+  //linkListService : LinkListService;
+  constructor(private animesService: AnimesService){
+    //this.linkListService = new LinkListService();
+    this.links = animesService.listAnimesLink();
   }
 
   ngOnInit(): void {

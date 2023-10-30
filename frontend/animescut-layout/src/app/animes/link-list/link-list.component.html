@@ -1,11 +1,11 @@
-<div *ngFor="let video of links" class="video-card">
-  <mat-card class="video-card">
-    <mat-card-title class="video-car-title">{{ video.title }}</mat-card-title>
+
+  <mat-card *ngFor="let anime of links" class="video-card">
+    <mat-card-title class="video-card-title">{{ anime.title }}</mat-card-title>
     <mat-card-content>
       <iframe
         width="100%"
         height="315"
-        src={{video.link}}
+        [src]="anime.link"
         frameborder="0"
         allowfullscreen
       ></iframe>
@@ -14,4 +14,4 @@
       <button mat-button class="datails-button">Detalhes</button>
     </mat-card-actions>
   </mat-card>
-</div>
+
