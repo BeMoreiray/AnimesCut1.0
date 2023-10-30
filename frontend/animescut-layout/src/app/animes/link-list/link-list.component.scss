@@ -1,4 +1,10 @@
-/* Estilo para o componente de vídeo */
+.link-list{
+  display: flex; /* Use flexbox para alinhar os cards horizontalmente */
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha quando a largura for excedida */
+  justify-content: flex-start; /* Alinhe os cards à esquerda */
+  align-items: flex-start; /* Alinhe os cards ao topo */
+}
+
 .video-card {
   max-width: 400px; /* Define a largura máxima do cartão de vídeo */
   margin: 10px; /* Define margem para espaçamento entre os cartões */

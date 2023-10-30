@@ -1,6 +1,7 @@
 import { AnimesService } from './../service/animes.service';
 import { Component, OnInit } from '@angular/core';
 import { Anime } from '../model/anime';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-link-list',
@@ -8,7 +9,7 @@ import { Anime } from '../model/anime';
   styleUrls: ['./link-list.component.scss']
 })
 export class LinkListComponent implements OnInit{
-  links: Anime[] = [];
+  links: Observable<Anime[]>;
 
   //linkListService : LinkListService;
   constructor(private animesService: AnimesService){

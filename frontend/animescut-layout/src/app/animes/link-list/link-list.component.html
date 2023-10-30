@@ -1,5 +1,5 @@
-
-  <mat-card *ngFor="let anime of links" class="video-card">
+<div class="link-list">
+  <mat-card *ngFor="let anime of links | async" class="video-card">
     <mat-card-title class="video-card-title">{{ anime.title }}</mat-card-title>
     <mat-card-content>
       <iframe
@@ -14,4 +14,5 @@
       <button mat-button class="datails-button">Detalhes</button>
     </mat-card-actions>
   </mat-card>
+</div>
 

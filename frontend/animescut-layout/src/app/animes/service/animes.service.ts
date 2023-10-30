@@ -2,17 +2,21 @@ import { Injectable } from '@angular/core';
 
 import { Anime } from '../model/anime';
 import { HttpClient } from '@angular/common/http';
+import { first, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimesService {
+  private readonly API = "/assets/animes.json"
 
   constructor(private httpClient: HttpClient) { }
 
-  listAnimesLink(): Anime[]{
-    return[
-      {_id: '1', title: 'Shingueki no Kyojin', link: 'https://www.youtube.com/embed/JGwWNGJdvx8?si=D-GMWiztL9FEFTBN'}
-    ];
+  listAnimesLink(){
+    return this.httpClient.get<Anime[]>(this.API)
+    .pipe(
+      first(),
+      tap(animes => console.log(animes))
+    );
   }
 }
