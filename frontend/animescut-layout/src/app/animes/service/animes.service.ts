@@ -8,7 +8,7 @@ import { first, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AnimesService {
-  private readonly API = "/assets/animes.json"
+  private readonly API = "api/animes/getAllAnimesLinkDTO"
 
   constructor(private httpClient: HttpClient) { }
 

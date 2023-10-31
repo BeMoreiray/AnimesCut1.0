@@ -18,7 +18,6 @@ export class LinkListComponent implements OnInit{
     private animesService: AnimesService,
     public dialog: MatDialog
     ){
-    //this.linkListService = new LinkListService();
     this.links = animesService.listAnimesLink()
     .pipe(
       catchError(error => {

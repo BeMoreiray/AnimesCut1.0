@@ -1,5 +1,6 @@
 package com.projects.animescut.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import com.projects.animescut.dto.AnimesLinkDTO;
 import com.projects.animescut.entities.Animes;
 import com.projects.animescut.exceptions.DuplicationException;
 import com.projects.animescut.exceptions.ResourceNotFoundException;
@@ -95,6 +97,19 @@ public class AnimesService {
 		return repository.findAnimesByTitle(title);
 	}
 	
+	public List<AnimesLinkDTO> findAllAnimesLinkDTO(){
+		List<Animes> animes = repository.findAll();
+		List<AnimesLinkDTO> animesLinkDTOList =  new ArrayList<>();
+		
+		
+		for(Animes anime : animes) {
+			AnimesLinkDTO animesLinkDTO = new AnimesLinkDTO();
+			animesLinkDTO.setTitle(anime.getTitle());
+			animesLinkDTO.setLink(anime.getLink());
+			animesLinkDTOList.add(animesLinkDTO);
+		}
+		return animesLinkDTOList;
+	}
 	
 	
 	
