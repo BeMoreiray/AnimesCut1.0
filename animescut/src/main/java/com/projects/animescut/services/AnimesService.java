@@ -22,7 +22,7 @@ import jakarta.transaction.Transactional;
 public class AnimesService {
 	
 	@Autowired
-	AnimesRepository repository;
+	private AnimesRepository repository;
 	
 	
 	public List<Animes> findAll() {
@@ -100,11 +100,12 @@ public class AnimesService {
 	public List<AnimesLinkDTO> findAllAnimesLinkDTO(){
 		List<Animes> animes = repository.findAll();
 		List<AnimesLinkDTO> animesLinkDTOList =  new ArrayList<>();
+		Long idCounter = 1L; //A variável idCounter é inicializada com o valor 1L (onde L indica que é um literal de longo alcance) porque você deseja iniciar a contagem de IDs incrementais a partir de 1.
 		
 		
 		for(Animes anime : animes) {
 			AnimesLinkDTO animesLinkDTO = new AnimesLinkDTO();
-			animesLinkDTO.setId(anime.getId());
+			animesLinkDTO.setId(idCounter++);
 			animesLinkDTO.setTitle(anime.getTitle());
 			animesLinkDTO.setLink(anime.getLink());
 			animesLinkDTOList.add(animesLinkDTO);
