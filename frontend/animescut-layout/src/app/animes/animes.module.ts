@@ -5,6 +5,8 @@ import { AnimesRoutingModule } from './animes-routing.module';
 import { LinkListComponent } from './link-list/link-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     AnimesRoutingModule,
     MatCardModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class AnimesModule { }

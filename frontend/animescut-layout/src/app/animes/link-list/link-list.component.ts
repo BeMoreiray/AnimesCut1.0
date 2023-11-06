@@ -32,8 +32,6 @@ export class LinkListComponent implements OnInit{
     });
   }
 
-  ngOnInit(): void {
-   
-  }
+  ngOnInit(): void {}
 
 }

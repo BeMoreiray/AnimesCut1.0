@@ -104,6 +104,7 @@ public class AnimesService {
 		
 		for(Animes anime : animes) {
 			AnimesLinkDTO animesLinkDTO = new AnimesLinkDTO();
+			animesLinkDTO.setId(anime.getId());
 			animesLinkDTO.setTitle(anime.getTitle());
 			animesLinkDTO.setLink(anime.getLink());
 			animesLinkDTOList.add(animesLinkDTO);

@@ -2,12 +2,13 @@
   <mat-card *ngFor="let anime of links | async" class="video-card">
     <mat-card-title class="video-card-title">{{ anime.title }}</mat-card-title>
     <mat-card-content>
+      <input type="hidden" [(ngModel)]="anime.id">
       <iframe
         width="100%"
         height="315"
         [src]="anime.link"
-        frameborder="0"
-        allowfullscreen
+        allow="fullscreen"
+        title="Vídeo do Anime"
       ></iframe>
     </mat-card-content>
     <mat-card-actions class="video-card-button">
