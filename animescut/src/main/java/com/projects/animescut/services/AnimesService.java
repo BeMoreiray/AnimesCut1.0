@@ -93,8 +93,21 @@ public class AnimesService {
 		
 	}
 	
-	public List<Animes> seacrhAnimesByTitle(String title){
-		return repository.findAnimesByTitle(title);
+	public List<AnimesLinkDTO> convertToAnimesLinkDTOList(List<Animes> animesList){
+		List<AnimesLinkDTO> animesLinkDTOList = new ArrayList<>();
+		for(Animes anime : animesList) {
+			AnimesLinkDTO animesLinkDTO = new AnimesLinkDTO();
+			animesLinkDTO.setId(anime.getId());
+			animesLinkDTO.setTitle(anime.getTitle());
+			animesLinkDTO.setLink(anime.getLink());
+			animesLinkDTOList.add(animesLinkDTO);
+		}
+		return animesLinkDTOList;
+	}
+	
+	public List<AnimesLinkDTO> seacrhAnimesByTitle(String title){
+		List<Animes> animesList = repository.findAnimesByTitle(title);
+		return convertToAnimesLinkDTOList(animesList);
 	}
 	
 	public List<AnimesLinkDTO> findAllAnimesLinkDTO(){
@@ -112,6 +125,8 @@ public class AnimesService {
 		}
 		return animesLinkDTOList;
 	}
+	
+	
 	
 	
 	
