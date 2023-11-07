@@ -22,8 +22,9 @@
         </mat-select>
       </mat-form-field>
       <span class="example-spacer"></span>
-      <input type="text"   class="search-input" placeholder="Pesquisar" >
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with search icon">
+
+      <input type="text"   [(ngModel)]="anime.title" class="search-input" placeholder="Pesquisar" >
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with search icon" (click)="searchAnimes(anime.title)">
         <mat-icon>search</mat-icon>
       </button>
 
@@ -31,4 +32,4 @@
   </mat-toolbar>
 
 
-<script src="/navbar/navbar.js"></script>
+<script src="../navbar/navbar.js"></script>

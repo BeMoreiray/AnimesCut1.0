@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AnimesService } from '../animes/service/animes.service';
 
 
 
@@ -31,7 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     NgFor,
     MatDialogModule
   ],
-  exports: [NavbarComponent, FooterComponent, ErrorDialogComponent]
+  exports: [NavbarComponent, FooterComponent, ErrorDialogComponent],
+  providers: [AnimesService]
 })
 export class SharedModule { }
 

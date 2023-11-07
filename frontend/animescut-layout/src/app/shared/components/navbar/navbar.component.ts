@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { AnimesService } from '../../../animes/service/animes.service';
 
 
 @Component({
@@ -7,6 +8,14 @@ import {Component} from '@angular/core';
   styleUrls: ['././navbar.component.scss'],
 
 })
-export class NavbarComponent {
+export class NavbarComponent{
+  anime: {title: string} = {title: ''};
 
+  constructor(private animesService: AnimesService){}
+
+  searchAnimes(title: string){
+      this.animesService.searchAnimesByTitle(title).subscribe(data =>{
+        console.log(data);
+      });
+  }
 }

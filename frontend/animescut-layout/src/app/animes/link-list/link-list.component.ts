@@ -11,27 +11,31 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
   styleUrls: ['./link-list.component.scss']
 })
 export class LinkListComponent implements OnInit{
-  links: Observable<Anime[]>;
+  links!: Observable<Anime[]>;
 
   //linkListService : LinkListService;
   constructor(
     private animesService: AnimesService,
     public dialog: MatDialog
-    ){
-    this.links = animesService.listAnimesLink()
+    ){}
+
+
+  ngOnInit(): void {
+    this.animesService.listAnimesLink()
     .pipe(
       catchError(error => {
         this.onError('Erro ao carregar animes');
         return of([])
       })
-    );
+    ).subscribe(anime => {
+      this.links = of(anime);
+    });
   }
+
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
       data: errorMsg
     });
   }
-
-  ngOnInit(): void {}
 
 }
