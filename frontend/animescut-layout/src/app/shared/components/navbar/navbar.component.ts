@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { AnimesService } from '../../../animes/service/animes.service';
+import { LinkListComponent } from 'src/app/animes/link-list/link-list.component';
 
 
 @Component({
@@ -10,12 +11,15 @@ import { AnimesService } from '../../../animes/service/animes.service';
 })
 export class NavbarComponent{
   anime: {title: string} = {title: ''};
+  @ViewChild(LinkListComponent) linkListComponent!: LinkListComponent;
 
   constructor(private animesService: AnimesService){}
 
   searchAnimes(title: string){
+    if(this.linkListComponent){
       this.animesService.searchAnimesByTitle(title).subscribe(data =>{
-        console.log(data);
+         this.linkListComponent.showSearchResults(data);
       });
+      }
   }
 }

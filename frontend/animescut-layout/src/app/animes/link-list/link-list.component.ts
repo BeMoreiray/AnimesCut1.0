@@ -12,13 +12,15 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 })
 export class LinkListComponent implements OnInit{
   links!: Observable<Anime[]>;
+  searchResults: Anime[] = [];
+  noResultsMessage: string = '';
+
 
   //linkListService : LinkListService;
   constructor(
     private animesService: AnimesService,
     public dialog: MatDialog
     ){}
-
 
   ngOnInit(): void {
     this.animesService.listAnimesLink()
@@ -36,6 +38,15 @@ export class LinkListComponent implements OnInit{
     this.dialog.open(ErrorDialogComponent, {
       data: errorMsg
     });
+  }
+
+  showSearchResults(results: Anime[]){
+    this.searchResults = results;
+    if(results.length === 0){
+      this.noResultsMessage = 'Nenhuma anime foi encontrado';
+    }else{
+      this.noResultsMessage = '';
+    }
   }
 
 }
