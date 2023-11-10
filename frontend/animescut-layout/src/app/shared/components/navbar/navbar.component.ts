@@ -15,11 +15,9 @@ export class NavbarComponent{
 
   constructor(private animesService: AnimesService){}
 
-  searchAnimes(title: string){
-    if(this.linkListComponent){
-      this.animesService.searchAnimesByTitle(title).subscribe(data =>{
-         this.linkListComponent.showSearchResults(data);
-      });
-      }
+  searchAnimes(title : string){
+    this.linkListComponent.clearSearchResults();
+    this.animesService.searchAnimesByTitle(title);
   }
 }
+

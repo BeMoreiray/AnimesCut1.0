@@ -32,12 +32,17 @@ export class LinkListComponent implements OnInit{
     ).subscribe(anime => {
       this.links = of(anime);
     });
-  }
+}
 
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
       data: errorMsg
     });
+  }
+  
+  clearSearchResults(): void {
+    this.searchResults = [];
+    this.noResultsMessage = '';
   }
 
   showSearchResults(results: Anime[]){
@@ -48,5 +53,6 @@ export class LinkListComponent implements OnInit{
       this.noResultsMessage = '';
     }
   }
+
 
 }
