@@ -54,3 +54,4 @@ data.trace.db
 
 # Diretórios específicos do H2
 h2db/
+/.metadata/

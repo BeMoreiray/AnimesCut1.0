@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projects.animescut.dto.AnimesDatailsDTO;
+import com.projects.animescut.dto.AnimesLinkDTO;
 import com.projects.animescut.entities.Animes;
 import com.projects.animescut.entities.Movies;
 import com.projects.animescut.entities.Series;
@@ -28,7 +29,7 @@ import jakarta.validation.Valid;
 
 
 @RestController
-@RequestMapping(value = "/animes")
+@RequestMapping(value = "/api/animes")
 public class AnimesController {
 	
 	
@@ -95,8 +96,8 @@ public class AnimesController {
 	}
 	
 	@GetMapping("/searchForAnimesNames")
-	public ResponseEntity<List<Animes>> searchAnimesByName(@RequestParam("title") String title){
-		List<Animes> result = service.seacrhAnimesByTitle(title.trim().toUpperCase());
+	public ResponseEntity<List<AnimesLinkDTO>> searchAnimesBy(@RequestParam("title") String title){
+		List<AnimesLinkDTO> result = service.seacrhAnimesByTitle(title.trim().toUpperCase());
 		
 		if(result != null) {
 		return  ResponseEntity.ok(result);
@@ -132,6 +133,11 @@ public class AnimesController {
 			throw new ResourceNotFoundException("Detalhes do anime buscado não foi encontrado!");
 		}
 		
+	}
+	
+	@GetMapping("/getAllAnimesLinkDTO")
+	public List<AnimesLinkDTO> getAllAnimesLinkDTO(){
+		return service.findAllAnimesLinkDTO();
 	}
 	
 	

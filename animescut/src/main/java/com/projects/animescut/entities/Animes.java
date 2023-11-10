@@ -1,5 +1,7 @@
 package com.projects.animescut.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,6 +19,7 @@ import jakarta.validation.constraints.NotNull;
 public class Animes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonProperty("_id")
 	private Long id;
 	@NotBlank(message="Titulo obrigatório")
 	private String title;
@@ -24,14 +27,14 @@ public class Animes {
 	private String link;
 	@Column(name = "release_year")
 	@NotNull
-	@Min(value= 1900)
+	@Min(value= 1900)
 	private int releaseYear;
 	@Column(name= "description_anime", columnDefinition = "TEXT")
-	@NotBlank(message="Descrição obrigatória")
+	@NotBlank(message="Descrição obrigatória")
 	private String description;
-	@NotBlank(message="Studio obrigatório")
+	@NotBlank(message="Studio obrigatório")
 	private String studio;
-	@NotBlank(message="Criador obrigatório")
+	@NotBlank(message="Criador obrigatório")
 	private String creator;
 	
 	@ManyToOne
