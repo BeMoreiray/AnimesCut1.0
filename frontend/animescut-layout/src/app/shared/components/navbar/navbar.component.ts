@@ -10,7 +10,7 @@ import { LinkListComponent } from 'src/app/animes/link-list/link-list.component'
 
 })
 export class NavbarComponent{
-  anime: {title: string} = {title: ''};
+  anime: {title: string, typesTitle: string} = {title: '', typesTitle: ''};
   @ViewChild(LinkListComponent) linkListComponent!: LinkListComponent;
 
   constructor(private animesService: AnimesService){}
@@ -18,6 +18,10 @@ export class NavbarComponent{
   searchAnimes(title : string){
     this.linkListComponent.clearSearchResults();
     this.animesService.searchAnimesByTitle(title);
+  }
+
+  searchAnimesByCategory(){
+    this.animesService.searchAnimesByCategory(this.anime.typesTitle);
   }
 }
 

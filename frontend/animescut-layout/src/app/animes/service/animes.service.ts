@@ -35,5 +35,16 @@ export class AnimesService {
       });
   }
 
+  searchAnimesByCategory(category : string): void {
+    const ednpoint = "searchAnimesByCategory";
+    const url = `${this.baseUrl}/${ednpoint}`;
+    const params = new HttpParams().set('typesTitle', category.toLowerCase().trim());
+
+    this.httpClient.get<Anime[]>(url, { params }).subscribe(results =>{
+      console.log(results);
+
+    });
+  }
+
 
 }
