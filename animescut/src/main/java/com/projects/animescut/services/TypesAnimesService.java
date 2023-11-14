@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import com.projects.animescut.entities.Animes;
+import com.projects.animescut.entities.Animes;
 import com.projects.animescut.entities.TypesAnimes;
 import com.projects.animescut.exceptions.DuplicationException;
 import com.projects.animescut.exceptions.ResourceNotFoundException;

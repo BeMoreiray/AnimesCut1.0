@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.projects.animescut.entities.Animes;
 
@@ -16,5 +17,8 @@ public interface AnimesRepository extends JpaRepository<Animes, Long>{
 	Optional<Animes> findByTitle(String title);
 	Optional<Animes> findByLink(String link);
 	Optional<Animes> findByDescription(String description);
+	
+	@Query(value = "select a from Animes a where a.typesAnimes.title = :typesAnimes")
+	List<Animes> findAnimesByTypesAnimes (@Param("typesAnimes") String typesTitle);
  
 }

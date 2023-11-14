@@ -126,6 +126,11 @@ public class AnimesService {
 		return animesLinkDTOList;
 	}
 	
+	public List<AnimesLinkDTO> findAnimesByCategory(String typesTitle){
+		List<Animes> animesList = repository.findAnimesByTypesAnimes(typesTitle);
+		return convertToAnimesLinkDTOList(animesList);
+	}
+	
 	
 	
 	
