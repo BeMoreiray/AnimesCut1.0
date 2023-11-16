@@ -140,6 +140,14 @@ public class AnimesController {
 		return service.findAllAnimesLinkDTO();
 	}
 	
-	
+	@GetMapping("/searchAnimesByCategory")
+	public ResponseEntity<List<AnimesLinkDTO>> searchAnimesByCategory(String typesTitle){
+		List<AnimesLinkDTO> result = service.findAnimesByCategory(typesTitle.trim().toUpperCase());
+		if(result!=null) {
+			return ResponseEntity.ok(result);
+		}else{
+			return ResponseEntity.notFound().build();
+		}
+	}
 	
 }

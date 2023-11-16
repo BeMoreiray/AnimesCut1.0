@@ -11,23 +11,22 @@
     <mat-toolbar-row>
       <mat-form-field>
         <mat-label>Escolha um genero</mat-label>
-        <mat-select >
-          <mat-option value="">Shounen</mat-option>
-          <mat-option value="">Shoujo</mat-option>
-          <mat-option value="">Seinen</mat-option>
-          <mat-option value="">Josei</mat-option>
-          <mat-option value="">Isekai</mat-option>
-          <mat-option value="">Gore</mat-option>
-          <mat-option value="">Slice of Life</mat-option>
+        <mat-select [(ngModel)]="anime.typesTitle" (selectionChange)="searchAnimesByCategory()" name="typesTitle">
+          <mat-option value="Shounen">Shounen</mat-option>
+          <mat-option value="Shoujo">Shoujo</mat-option>
+          <mat-option value="Seinen">Seinen</mat-option>
+          <mat-option value="Josei">Josei</mat-option>
+          <mat-option value="Isekai">Isekai</mat-option>
+          <mat-option value="Gore">Gore</mat-option>
+          <mat-option value="Slice of Life">Slice of Life</mat-option>
         </mat-select>
       </mat-form-field>
       <span class="example-spacer"></span>
 
-      <input type="text"   [(ngModel)]="anime.title" class="search-input" placeholder="Pesquisar" >
+      <input type="text" [(ngModel)]="anime.title" class="search-input" placeholder="Pesquisar" >
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with search icon" (click)="searchAnimes(anime.title)">
         <mat-icon>search</mat-icon>
       </button>
-
     </mat-toolbar-row>
   </mat-toolbar>
 
