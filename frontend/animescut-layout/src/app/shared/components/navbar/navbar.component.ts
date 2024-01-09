@@ -16,7 +16,7 @@ export class NavbarComponent{
   constructor(private animesService: AnimesService){}
 
   searchAnimes(title : string){
-    this.linkListComponent.clearSearchResults();
+    //this.linkListComponent.clearSearchResults();
     this.animesService.searchAnimesByTitle(title);
   }
 

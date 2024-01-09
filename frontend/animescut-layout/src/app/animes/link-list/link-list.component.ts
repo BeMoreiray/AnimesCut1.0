@@ -39,7 +39,7 @@ export class LinkListComponent implements OnInit{
       data: errorMsg
     });
   }
-  
+
   clearSearchResults(): void {
     this.searchResults = [];
     this.noResultsMessage = '';
