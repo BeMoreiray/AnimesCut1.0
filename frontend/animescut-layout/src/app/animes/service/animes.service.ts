@@ -31,7 +31,8 @@ export class AnimesService {
       const params = new HttpParams().set('title', title.toLowerCase().trim());
 
       this.httpClient.get<Anime[]>(url, { params }).subscribe((results) =>{
-        this.searchResultsSource.next(results);
+        /*this.searchResultsSource.next(results);*/
+        console.log(results);
       });
   }
 
