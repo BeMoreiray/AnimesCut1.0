@@ -7,10 +7,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AnimesService } from '../animes/service/animes.service';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -18,7 +21,9 @@ import { AnimesService } from '../animes/service/animes.service';
   declarations: [
     NavbarComponent,
     FooterComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -29,11 +34,13 @@ import { AnimesService } from '../animes/service/animes.service';
     MatFormFieldModule,
     MatSelectModule,
     NgFor,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   exports: [NavbarComponent, FooterComponent, ErrorDialogComponent],
   providers: [AnimesService]
 })
-export class SharedModule { }
+export class SharedModule {}
 
 
