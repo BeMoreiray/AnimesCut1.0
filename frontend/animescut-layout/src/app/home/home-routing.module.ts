@@ -8,8 +8,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('../animes/animes.module').then(m => m.AnimesModule)
-  },
-  { path: 'login', component: LoginComponent }
+  }
 
 ];
 
